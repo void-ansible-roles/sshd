@@ -2,6 +2,12 @@
 
 AddressFamily inet
 
+{% if sshd_listen_addresses is defined %}
+{% for address in sshd_listen_addresses %}
+ListenAddress {{ address }}
+{% endfor %}
+{% endif %}
+
 HostKey /etc/ssh/ssh_host_ed25519_key
 HostKey /etc/ssh/ssh_host_rsa_key
 

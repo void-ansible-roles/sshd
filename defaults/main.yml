@@ -1,2 +1,7 @@
 ---
 ssh_banner: ssh_banner_default
+
+# Use this variable to set what addresses sshd should bind on for
+# multihomed machines, this variable takes a list.
+# sshd_listen_addresses
+#   - 192.168.42.42
