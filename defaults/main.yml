@@ -1,5 +1,5 @@
 ---
-ssh_banner: ssh_banner_default
+sshd_banner: ssh_banner_default
 
 # Use this variable to set what addresses sshd should bind on for
 # multihomed machines, this variable takes a list.
