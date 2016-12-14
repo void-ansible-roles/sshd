@@ -1,7 +1,7 @@
 ---
 - name: Add SSH banner
-  cops:
-    src: "{{ sshd_banner }}:
+  copy:
+    src: "{{ sshd_banner }}"
     dest: /etc/ssh/banner
     owner: root
     group: root
@@ -16,5 +16,6 @@
     owner: root
     group: root
     mode: 0644
+    validate: '/usr/sbin/sshd -T -f %s'
   notify:
     - sshd

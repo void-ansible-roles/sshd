@@ -16,6 +16,19 @@ Files Managed:
 
 Defaults Provided:
   * sshd_banner: ssh_banner_default
+  * sshd_Ciphers:
+      - chacha20-poly1305@openssh.com
+      - aes256-gcm@openssh.com
+      - aes256-ctr
+  * sshd_KexAlgorithms:
+      - curve25519-sha256@libssh.org
+      - diffie-hellman-group-exchange-sha256
+  * sshd_MACs:
+      - hmac-sha2-512-etm@openssh.com
+      - hmac-sha2-512,hmac-sha2-256
+      - hmac-ripemd160
+  * sshd_AuthenticationMethods:
+      - publickey
 
 Variables Required:
   * None
@@ -23,7 +36,10 @@ Variables Required:
 Optional Variables:
   * sshd_banner: Name of a file to copy as the sshd banner
   * sshd_listen_addresses: List of addresses to run sshd on.  If this variable is not present, sshd will bind to all addresses on the system.
-
+  * sshd_Ciphers: List of ciphers to use
+  * sshd_KexAlgorithms: List of Key Exchange Algorithms to use
+  * sshd_MACs: List of Message Authentication Codes to use
+  * sshd_AuthenticationMethods:  List of authentication methods to try
 Files Required:
   * None
 
