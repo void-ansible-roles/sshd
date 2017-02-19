@@ -19,7 +19,7 @@ PermitRootLogin no
 
 Banner /etc/ssh/banner
 
-UsePAM yes
+UsePAM {{ sshd_usepam | ternary("yes", "no") }}
 
 {% if sshd_AuthorizedKeysCommand is defined %}
 AuthorizedKeysCommandUser _sshd_keyuser
