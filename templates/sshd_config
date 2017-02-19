@@ -1,7 +1,5 @@
 # See the sshd_config(5) manpage for details
 
-AddressFamily inet
-
 {% if sshd_listen_addresses is defined %}
 {% for address in sshd_listen_addresses %}
 ListenAddress {{ address }}
