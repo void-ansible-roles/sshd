@@ -19,3 +19,11 @@
     validate: '/usr/sbin/sshd -T -f %s'
   notify:
     - sshd
+
+- name: Create _sshd_keyuser
+  user:
+    name: _sshd_keyuser
+    state: present
+    system: yes
+    createhome: no
+  when: sshd_AuthorizedKeysCommand is defined

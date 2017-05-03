@@ -39,7 +39,11 @@ Optional Variables:
   * sshd_Ciphers: List of ciphers to use
   * sshd_KexAlgorithms: List of Key Exchange Algorithms to use
   * sshd_MACs: List of Message Authentication Codes to use
+  * sshd_AllowGroupAlways: group which will always be added to the AllowedGroups list
+  * sshd_AllowGroups: list of groups which will be added with AllowGroups entries
   * sshd_AuthenticationMethods:  List of authentication methods to try
+  * sshd_AuthorizedKeysCommand: Optional command to run to retrieve keys
+
 Files Required:
   * None
 

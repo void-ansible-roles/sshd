@@ -21,5 +21,21 @@ Banner /etc/ssh/banner
 
 UsePAM yes
 
+{% if sshd_AuthorizedKeysCommand is defined %}
+AuthorizedKeysCommandUser _sshd_keyuser
+AuthorizedKeysCommand {{ sshd_AuthorizedKeysCommand }}
+{% endif %}
+
 AuthenticationMethods {{ sshd_AuthenticationMethods | join(",") }}
+{% if sshd_AuthorizedKeysFile %}
 AuthorizedKeysFile %h/.ssh/authorized_keys
+{% endif %}
+
+{% if sshd_AllowGroupAlways is defined %}
+AllowGroups "{{ sshd_AllowGroupAlways }}"
+{% endif %}
+{% if sshd_AllowGroups is defined %}
+{% for group in sshd_AllowGroups %}
+AllowGroups "{{ group }}"
+{% endfor %}
+{% endif %}
