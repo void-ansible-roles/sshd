@@ -24,3 +24,5 @@ sshd_MACs:
 
 sshd_AuthenticationMethods:
   - publickey
+
+sshd_AuthorizedKeysFile: true
