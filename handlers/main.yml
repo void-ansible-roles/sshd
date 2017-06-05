@@ -1,3 +1,5 @@
 ---
 - name: sshd
-  command: sv restart sshd
+  runit:
+    name: sshd
+    state: restarted
