@@ -13,7 +13,6 @@ Ciphers {{ sshd_Ciphers | join(",") }}
 KexAlgorithms {{ sshd_KexAlgorithms | join(",") }}
 MACs {{ sshd_MACs | join(",") }}
 
-UsePrivilegeSeparation sandbox
 Subsystem sftp /usr/libexec/sftp-server
 PermitRootLogin no
 
