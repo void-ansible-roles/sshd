@@ -20,7 +20,6 @@ sshd_KexAlgorithms:
 sshd_MACs:
   - hmac-sha2-512-etm@openssh.com
   - hmac-sha2-512,hmac-sha2-256
-  - hmac-ripemd160
 
 sshd_AuthenticationMethods:
   - publickey
