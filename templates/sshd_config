@@ -30,8 +30,10 @@ AuthenticationMethods {{ sshd_AuthenticationMethods | join(",") }}
 AuthorizedKeysFile %h/.ssh/authorized_keys
 {% endif %}
 
-{% if sshd_AllowGroupAlways is defined %}
-AllowGroups "{{ sshd_AllowGroupAlways }}"
+{% if sshd_AllowGroupsAlways is defined %}
+{% for group in sshd_AllowGroupsAlways %}
+AllowGroups "{{ group }}"
+{% endfor %}
 {% endif %}
 {% if sshd_AllowGroups is defined %}
 {% for group in sshd_AllowGroups %}
