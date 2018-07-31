@@ -37,7 +37,9 @@ Variables Required:
 Optional Variables:
   * sshd_banner: Name of a file to copy as the sshd banner
   * sshd_listen_addresses: List of addresses to run sshd on.  If this variable is not present, sshd will bind to all addresses on the system.
-  * sshd_usepam: binary, whether or not to use PAM challenge/response
+  * sshd_usepam: binary, whether or not to use PAM
+  * sshd_passwords: permit password authentication
+  * sshd_challengeresponse: permit challenge/response authentication
   * sshd_Ciphers: List of ciphers to use
   * sshd_KexAlgorithms: List of Key Exchange Algorithms to use
   * sshd_MACs: List of Message Authentication Codes to use

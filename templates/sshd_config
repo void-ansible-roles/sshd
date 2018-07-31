@@ -19,6 +19,8 @@ PermitRootLogin no
 Banner /etc/ssh/banner
 
 UsePAM {{ sshd_usepam | ternary("yes", "no") }}
+PasswordAuthentication {{ sshd_passwords | ternary("yes", "no") }}
+ChallengeResponseAuthentication {{ sshd_challengeresponse | ternary("yes", "no") }}
 
 {% if sshd_AuthorizedKeysCommand is defined %}
 AuthorizedKeysCommandUser _sshd_keyuser
