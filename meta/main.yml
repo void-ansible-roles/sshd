@@ -1,3 +1,19 @@
 ---
 dependencies:
-  - { role: network }
+  - { role: void.network }
+
+galaxy_info:
+  role_name: sshd
+  author: Michael Aldridge
+  description: configures sshd for use on a Void system
+  license: license (MIT)
+  min_ansible_version: 1.2
+  platforms:
+    - name: Void Linux
+      version:
+        - all
+  galaxy_tags:
+    - sshd
+    - system
+    - network
+    - security
