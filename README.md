@@ -58,4 +58,4 @@ Conflicting Roles:
   * None
 
 Depends On:
-  * None
+  * [void.network](https://github.com/void-ansible-roles/network)
