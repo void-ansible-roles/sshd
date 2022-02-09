@@ -1,7 +1,4 @@
 ---
-dependencies:
-  - { role: void.network }
-
 galaxy_info:
   role_name: sshd
   author: Michael Aldridge
