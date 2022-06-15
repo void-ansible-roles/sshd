@@ -14,3 +14,5 @@ galaxy_info:
     - system
     - network
     - security
+dependencies:
+  - { role: void.network.iptables }
