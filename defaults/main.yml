@@ -3,7 +3,7 @@ sshd_banner: sshd_banner_default
 
 sshd_usepam: true
 sshd_passwords: true
-sshd_challengeresponse: no
+sshd_challengeresponse: false
 
 # Use this variable to set what addresses sshd should bind on for
 # multihomed machines, this variable takes a list.

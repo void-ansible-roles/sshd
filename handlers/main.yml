@@ -1,5 +1,6 @@
 ---
-- name: sshd
-  runit:
+- name: Restart SSHd
+  listen: sshd
+  community.general.runit:
     name: sshd
     state: restarted

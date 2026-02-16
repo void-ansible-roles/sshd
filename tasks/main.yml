@@ -1,29 +1,29 @@
 ---
 - name: Add SSH banner
-  copy:
+  ansible.builtin.copy:
     src: "{{ sshd_banner }}"
     dest: /etc/ssh/banner
     owner: root
     group: root
-    mode: 0644
+    mode: "0644"
   notify:
     - sshd
 
 - name: Configure sshd
-  template:
+  ansible.builtin.template:
     src: sshd_config
     dest: /etc/ssh/sshd_config
     owner: root
     group: root
-    mode: 0644
-    validate: '/usr/sbin/sshd -T -f %s'
+    mode: "0644"
+    validate: "/usr/sbin/sshd -T -f %s"
   notify:
     - sshd
 
 - name: Create _sshd_keyuser
-  user:
+  ansible.builtin.user:
     name: _sshd_keyuser
     state: present
-    system: yes
-    createhome: no
+    system: true
+    createhome: false
   when: sshd_AuthorizedKeysCommand is defined
